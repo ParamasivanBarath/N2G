@@ -1,11 +1,12 @@
+
+
 /* styles for Brands component */
 .brands-container {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
-    background-color: var(--bg-color);
+    background-color: #ffffff;
     padding: 10px 0;
-    transition: background-color 0.3s;
   }
   
   .brands-scroller {
@@ -45,25 +46,5 @@
   /* Pause animation on hover */
   .brands-container:hover .brands-scroller {
     animation-play-state: paused;
-  }
-  
-  /* Light mode styles */
-  @media (prefers-color-scheme: light) {
-    :root {
-      --bg-color: #ffffff;
-    }
-    .brand-item {
-      color: #000000;
-    }
-  }
-  
-  /* Dark mode styles */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg-color: #333333;
-    }
-    .brand-item {
-      color: #ffffff;
-    }
   }
   

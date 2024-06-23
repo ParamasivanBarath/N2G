@@ -2,7 +2,7 @@ import React from 'react';
 import './Brands.css';
 import OpenAI from "C:/Vizion_Chatbot/my-project/src/assets/OpenAI.png";
 import MistralAI from "C:/Vizion_Chatbot/my-project/src/assets/MistralAI.png";
-import HuggingFace from "C:/Vizion_Chatbot/my-project/src/assets/HuggingFace.png";
+import HuggingFace from "C:/Vizion_Chatbot/my-project/src/assets/Huggingface.png";
 import Pinecone from "C:/Vizion_Chatbot/my-project/src/assets/Pinecone.png";
 import Gemini from "C:/Vizion_Chatbot/my-project/src/assets/Gemini.png";
 import Bard from "C:/Vizion_Chatbot/my-project/src/assets/Bard.png";
