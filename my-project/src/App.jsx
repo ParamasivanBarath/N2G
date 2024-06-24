@@ -36,10 +36,7 @@ const App = () => {
       <main className="overflow-x-hidden bg-white dark:bg-black">
         <Navbar />
         <Routes>
-          <Route
-            path="/"
-            element={<Hero togglePlay={togglePlay} />}
-          />
+          
           <Route
             path="/Home"
             element={<Hero togglePlay={togglePlay} />}
