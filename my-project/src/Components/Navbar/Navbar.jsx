@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "C:/Vizion_Chatbot/my-project/src/assets/logo.png";
 import { HiMenuAlt1, HiMenuAlt3 } from "react-icons/hi";
 import DarkMode from "./Darkmode";
@@ -7,26 +8,41 @@ const NavLinks = [
   {
     id: 1,
     name: "Home",
-    link: "#",
+    link: "/Home",
   },
   {
     id: 2,
-    name: "Products",
-    link: "#",
+    name: "About",
+    link: "/About",
   },
   {
     id: 3,
-    name: "Pricing",
-    link: "#",
+    name: "Solutions",
+    link: "/Solutions",
   },
   {
     id: 4,
+    name: "Career",
+    link: "/Career",
+  },
+  {
+    id: 5,
+    name: "Blogs",
+    link: "/Blogs",
+  },
+  {
+    id: 6,
+    name: "News",
+    link: "/News",
+  },
+  {
+    id: 7,
     name: "Contact",
-    link: "#",
+    link: "/Contact",
   },
 ];
 
-const Navbar = () => {
+const Navbar = ({ setView }) => {
   const [showMenu, setShowMenu] = React.useState(false);
   const toggleMenu = () => setShowMenu(!showMenu);
 
@@ -37,20 +53,19 @@ const Navbar = () => {
           {/* logo section */}
           <div className="flex items-center gap-3">
             <img src={logo} alt="Logo" className="h-10" /> {/* Slightly increased size */}
-            </div>
-
+          </div>
 
           {/* Desktop Menu section */}
           <nav className="hidden md:flex items-center gap-8">
             <ul className="flex items-center gap-8">
               {NavLinks.map(({ id, name, link }) => (
                 <li key={id} className="py-4">
-                  <a
-                    href={link}
+                  <Link
+                    to={link}
                     className="text-xl font-semibold hover:text-primary py-2 hover:border-b-2 hover:border-secondary transition-colors duration-500"
                   >
                     {name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -81,12 +96,13 @@ const Navbar = () => {
           <ul className="flex flex-col items-center gap-8">
             {NavLinks.map(({ id, name, link }) => (
               <li key={id}>
-                <a
-                  href={link}
+                <Link
+                  to={link}
                   className="text-2xl font-semibold hover:text-primary transition-colors duration-500"
+                  onClick={toggleMenu}
                 >
                   {name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

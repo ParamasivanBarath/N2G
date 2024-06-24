@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 import Hero from './Components/Hero/Hero';
 import Banner from './Components/Banner/Banner';
@@ -28,25 +29,62 @@ const App = () => {
       delay: 100,
     });
     AOS.refresh();
-  },[]);
-  return(
-    <main className="overflow-x-hidden bg-white dark:bg-black">
-    <Navbar />
-    <Hero togglePlay={togglePlay}/>
-    <Features />
-    <Quotes />
-    <Banner togglePlay={togglePlay}/>
-    <Banner2 togglePlay={togglePlay}/>
-    <Banner togglePlay={togglePlay}/>
-    <Banner2 togglePlay={togglePlay}/>
-    <Brands togglePlay={togglePlay}/>
-    <Appstore />
-    <Footer />
+  }, []);
 
-    {/* Video Player */}
-    <PopupPlayer isPlay={isPlay} togglePlay={togglePlay} />
-  </main>
+  return (
+    <Router>
+      <main className="overflow-x-hidden bg-white dark:bg-black">
+        <Navbar />
+        <Routes>
+          <Route
+            path="/"
+            element={<Hero togglePlay={togglePlay} />}
+          />
+          <Route
+            path="/Home"
+            element={<Hero togglePlay={togglePlay} />}
+          />
+          <Route
+            path="/About"
+            element={<Banner />}
+          />
+          <Route
+            path="/Features"
+            element={<Features />}
+          />
+          <Route
+            path="/Quotes"
+            element={<Quotes />}
+          />
+          <Route
+            path="/Banner2"
+            element={<Banner2 />}
+          />
+          <Route
+            path="/Brands"
+            element={<Brands />}
+          />
+          <Route
+            path="/Appstore"
+            element={<Appstore />}
+          />
+          <Route
+            path="/Footer"
+            element={<Footer />}
+          />
+        </Routes>
+        <Features />
+        <Quotes />
+        <Banner2 togglePlay={togglePlay} />
+        <Banner togglePlay={togglePlay} />
+        <Banner2 togglePlay={togglePlay} />
+        <Brands />
+        <Appstore />
+        <Footer />
+        <PopupPlayer isPlay={isPlay} togglePlay={togglePlay} />
+      </main>
+    </Router>
   );
-}; 
+};
 
-export default App
+export default App;

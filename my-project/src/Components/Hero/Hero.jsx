@@ -1,8 +1,8 @@
 import React from "react";
-import Aipt from "../../assets/Aipt.png";
-import Aiptslider1 from "../../assets/Aipt-slider1.png";
-import Aiptslider2 from "../../assets/Aipt-slider2.png";
-import Aiptslider3 from "../../assets/Aipt-slider3.png";
+import Aipt from "C:/Vizion_Chatbot/my-project/src/assets/Aipt.png";
+import Aiptslider1 from "C:/Vizion_Chatbot/my-project/src/assets/Aipt-slider1.png";
+import Aiptslider2 from "C:/Vizion_Chatbot/my-project/src/assets/Aipt-slider2.png";
+import Aiptslider3 from "C:/Vizion_Chatbot/my-project/src/assets/Aipt-slider3.png";
 import { BiPlayCircle } from "react-icons/bi";
 import './Hero.css'; // Ensure this path is correct based on your project structure
 
