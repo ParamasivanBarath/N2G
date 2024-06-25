@@ -10,6 +10,8 @@ import PopupPlayer from './Components/PopupPlayer/PopupPlayer';
 import Quotes from './Components/Quotes/Quotes';
 import Appstore from './Components/Appstore/Appstore';
 import Brands from './Components/Brands/Brands';
+import Solutions from './Components/Solutions/Solutions';
+import Contact from './Components/Contact/Contact';
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -36,7 +38,10 @@ const App = () => {
       <main className="overflow-x-hidden bg-white dark:bg-black">
         <Navbar />
         <Routes>
-          
+          <Route
+            path="/"
+            element={<Hero togglePlay={togglePlay} />}
+          />
           <Route
             path="/Home"
             element={<Hero togglePlay={togglePlay} />}
@@ -46,8 +51,16 @@ const App = () => {
             element={<Banner />}
           />
           <Route
+            path="/Contact"
+            element={<Contact />}
+          />
+          <Route
             path="/Features"
             element={<Features />}
+          />
+          <Route
+            path="/Solutions"
+            element={<Solutions togglePlay={togglePlay} />}
           />
           <Route
             path="/Quotes"
@@ -71,6 +84,7 @@ const App = () => {
           />
         </Routes>
         <Features />
+        <Solutions togglePlay={togglePlay}/>
         <Quotes />
         <Banner2 togglePlay={togglePlay} />
         <Banner togglePlay={togglePlay} />

@@ -28,7 +28,7 @@ const NavLinks = [
   {
     id: 5,
     name: "Blogs",
-    link: "/Blogs",
+    link: "https://06g.06e.myftpupload.com/blog/", // External link
   },
   {
     id: 6,
@@ -46,6 +46,12 @@ const Navbar = ({ setView }) => {
   const [showMenu, setShowMenu] = React.useState(false);
   const toggleMenu = () => setShowMenu(!showMenu);
 
+  const handleNavClick = (link) => {
+    if (link.startsWith("http")) {
+      window.location.href = link;
+    }
+  };
+
   return (
     <div className="relative z-[9999] text-black dark:text-white duration-300">
       <div className="container py-2 md:py-0">
@@ -60,12 +66,23 @@ const Navbar = ({ setView }) => {
             <ul className="flex items-center gap-8">
               {NavLinks.map(({ id, name, link }) => (
                 <li key={id} className="py-4">
-                  <Link
-                    to={link}
-                    className="text-xl font-semibold hover:text-primary py-2 hover:border-b-2 hover:border-secondary transition-colors duration-500"
-                  >
-                    {name}
-                  </Link>
+                  {link.startsWith("http") ? (
+                    <a
+                      href={link}
+                      className="text-xl font-semibold hover:text-primary py-2 hover:border-b-2 hover:border-secondary transition-colors duration-500"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {name}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link}
+                      className="text-xl font-semibold hover:text-primary py-2 hover:border-b-2 hover:border-secondary transition-colors duration-500"
+                    >
+                      {name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -96,13 +113,25 @@ const Navbar = ({ setView }) => {
           <ul className="flex flex-col items-center gap-8">
             {NavLinks.map(({ id, name, link }) => (
               <li key={id}>
-                <Link
-                  to={link}
-                  className="text-2xl font-semibold hover:text-primary transition-colors duration-500"
-                  onClick={toggleMenu}
-                >
-                  {name}
-                </Link>
+                {link.startsWith("http") ? (
+                  <a
+                    href={link}
+                    className="text-2xl font-semibold hover:text-primary transition-colors duration-500"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={toggleMenu}
+                  >
+                    {name}
+                  </a>
+                ) : (
+                  <Link
+                    to={link}
+                    className="text-2xl font-semibold hover:text-primary transition-colors duration-500"
+                    onClick={toggleMenu}
+                  >
+                    {name}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

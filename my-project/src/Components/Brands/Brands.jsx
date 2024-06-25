@@ -18,15 +18,17 @@ const brands = [
 
 const Brands = () => {
   return (
-    <div className="brands-container">
-      <div className="brands-scroller">
+   
+     <div className=" brands-container">
+      <div className="brands-scroller ">
         {brands.map((brand, index) => (
-          <div key={index} className="brand-item">
+          <div key={index} className="brand-item ">
             <img src={brand.image} alt={brand.name} className="brand-image" />
           </div>
         ))}
       </div>
-    </div>
+     </div>
+    
   );
 };
 

@@ -1,50 +1,54 @@
-
-
 /* styles for Brands component */
-.brands-container {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    background-color: #ffffff;
-    padding: 10px 0;
+.dark .brands-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 5px 0; /* Reduced padding to minimize space */
+  position: relative; /* Add position relative for the hover effect */
+  background-color: #000000;
+  color: white;
+}
+
+.brands-scroller {
+  display: inline-block;
+  animation: scroll 20s linear infinite;
+}
+
+.brand-item {
+  display: inline-block;
+  margin: 0 10px; /* Reduced margin to minimize space */
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.brand-image {
+  max-width: 120px; /* Reduced size */
+  height: auto;
+  display: block;
+  filter: grayscale(100%); /* Make images black & white */
+  transition: filter 0.3s, transform 0.3s;
+}
+
+.brand-item:hover .brand-image {
+  transform: scale(1.1); /* Slightly increase size on hover */
+  filter: grayscale(0%); /* Turn image into color on hover */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
   }
-  
-  .brands-scroller {
-    display: inline-block;
-    animation: scroll 20s linear infinite;
+  100% {
+    transform: translateX(-100%);
   }
-  
-  .brand-item {
-    display: inline-block;
-    margin: 0 20px;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  
-  .brand-image {
-    max-width: 150px; /* Increased size */
-    height: auto;
-    display: block;
-    filter: grayscale(100%); /* Make images black & white */
-    transition: filter 0.3s, transform 0.3s;
-  }
-  
-  .brand-item:hover .brand-image {
-    transform: scale(1.1); /* Slightly increase size on hover */
-    filter: grayscale(0%); /* Turn image into color on hover */
-  }
-  
-  @keyframes scroll {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-  
-  /* Pause animation on hover */
-  .brands-container:hover .brands-scroller {
-    animation-play-state: paused;
-  }
-  
+}
+
+/* Pause animation on hover */
+.brands-scroller {
+  transition: animation-play-state 0.3s;
+}
+
+.brands-container:hover .brands-scroller {
+  animation-play-state: paused;
+}
+

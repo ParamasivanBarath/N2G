@@ -19,7 +19,7 @@ const FeaturesData = [
       <img src={ScalableAIIcon} alt="Scalable AI" className="w-16 h-16 group-hover:text-black duration-300" />
     ),
     link: "#",
-    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elitScalable AI solutions, expertly engineered to quickly and effectively deliver groundbreaking results, enhancing efficiency across diverse applications.",
+    description: "Scalable AI solutions, expertly engineered to quickly and effectively deliver groundbreaking results, enhancing efficiency across diverse applications.",
     aosDelay: "500",
   },
   {
