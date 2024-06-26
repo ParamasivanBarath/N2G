@@ -83,15 +83,35 @@ const App = () => {
             element={<Footer />}
           />
         </Routes>
-        <Features />
-        <Solutions togglePlay={togglePlay}/>
-        <Quotes />
-        <Banner2 togglePlay={togglePlay} />
-        <Banner togglePlay={togglePlay} />
-        <Banner2 togglePlay={togglePlay} />
-        <Brands />
-        <Appstore />
-        <Footer />
+        <div className="space-y-20 py-10"> {/* Increase spacing and add padding */}
+          <div className="container mx-auto">
+            <Features />
+          </div>
+          <div className="container mx-auto">
+            <Solutions togglePlay={togglePlay}/>
+          </div>
+          <div className="container mx-auto">
+            <Quotes />
+          </div>
+          <div className="container mx-auto">
+            <Banner2 togglePlay={togglePlay} />
+          </div>
+          <div className="container mx-auto">
+            <Banner togglePlay={togglePlay} />
+          </div>
+          <div className="container mx-auto">
+            <Banner2 togglePlay={togglePlay} />
+          </div>
+          <div className="container mx-auto">
+            <Brands />
+          </div>
+          <div className="container mx-auto">
+            <Appstore />
+          </div>
+          <div className="container mx-auto">
+            <Footer />
+          </div>
+        </div>
         <PopupPlayer isPlay={isPlay} togglePlay={togglePlay} />
       </main>
     </Router>
