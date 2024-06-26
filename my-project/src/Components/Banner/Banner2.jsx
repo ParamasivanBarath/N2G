@@ -1,5 +1,5 @@
 import React from "react";
-import BannerPng from "C:/Vizion_Chatbot/my-project/src/assets/banner2.png";
+import BannerPng from "../../assets/banner2.png";
 import { BiPlayCircle } from "react-icons/bi";
 
 const Banner2 = ({ togglePlay }) => {

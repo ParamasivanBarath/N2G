@@ -1,7 +1,7 @@
 import React from "react";
-import GenerativeAIIcon from "C:/Vizion_Chatbot/my-project/src/assets/Generative AI.png"; // Adjust the path if necessary
-import ResponsiveAIIcon from "C:/Vizion_Chatbot/my-project/src/assets/Responsive AI.png";
-import ScalableAIIcon from "C:/Vizion_Chatbot/my-project/src/assets/Scalable AI.png";
+import GenerativeAIIcon from "../../assets/Generative AI.png"; // Adjust the path if necessary
+import ResponsiveAIIcon from "../../assets/Responsive AI.png";
+import ScalableAIIcon from "../../assets/Scalable AI.png";
 
 const FeaturesData = [
   {

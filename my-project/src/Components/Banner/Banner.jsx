@@ -1,6 +1,6 @@
 import React from "react";
-import Aiptabout from "C:/Vizion_Chatbot/my-project/src/assets/Aiptabout.png";
-import Aiptabout2 from "C:/Vizion_Chatbot/my-project/src/assets/Aiptabout2.png";
+import Aiptabout from "../../assets/Aiptabout.png";
+import Aiptabout2 from "../../assets/Aiptabout2.png";
 import { BiPlayCircle, BiCheckCircle } from "react-icons/bi";
 import './Banner.css'; // Ensure this path is correct based on your project structure
 

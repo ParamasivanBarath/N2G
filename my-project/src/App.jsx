@@ -35,7 +35,7 @@ const App = () => {
 
   return (
     <Router>
-      <main className="overflow-x-hidden bg-white dark:bg-black">
+      <main className="overflow-x-hidden bg-white dark:bg-black px-0 mx-0">
         <Navbar />
         <Routes>
           <Route
@@ -83,32 +83,32 @@ const App = () => {
             element={<Footer />}
           />
         </Routes>
-        <div className="space-y-20 "> {/* Increase spacing and add padding */}
-          <div className="container mx-auto">
+        <div className="space-y-20"> {/* Increase spacing and add padding */}
+          <div className="w-full p-0 m-0">
             <Features />
           </div>
-          <div className="container mx-auto">
+          <div className="w-full p-0 m-0">
             <Solutions togglePlay={togglePlay}/>
           </div>
-          <div className="container mx-auto">
+          <div className="w-full p-0 m-0">
             <Quotes />
           </div>
-          <div className="container mx-auto">
+          <div className="w-full p-0 m-0">
             <Banner2 togglePlay={togglePlay} />
           </div>
-          <div className="container mx-auto">
+          <div className="w-full p-0 m-0">
             <Banner togglePlay={togglePlay} />
           </div>
-          <div className="container mx-auto">
+          <div className="w-full p-0 m-0">
             <Banner2 togglePlay={togglePlay} />
           </div>
-          <div className="container mx-auto">
+          <div className="w-full p-0 m-0">
             <Brands />
           </div>
-          <div className="container mx-auto">
+          <div className="w-full p-0 m-0">
             <Appstore />
           </div>
-          <div className="container mx-auto">
+          <div className="w-full p-0 m-0">
             <Footer />
           </div>
         </div>

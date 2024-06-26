@@ -1,6 +1,6 @@
 import React from "react";
-import AppStoreImg from "C:/Vizion_Chatbot/my-project/src/assets/website/app_store.png";
-import PlayStoreImg from "C:/Vizion_Chatbot/my-project/src/assets/website/play_store.png";
+import AppStoreImg from "../../assets/website/app_store.png";
+import PlayStoreImg from "../../assets/website/play_store.png";
 
 const Appstore = () => {
   return (
