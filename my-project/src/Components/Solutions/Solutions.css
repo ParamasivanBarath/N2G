@@ -44,24 +44,27 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s, border 0.3s;
   cursor: pointer;
+  border: 2px solid transparent;
 }
 
 .dark .solution-item {
-  background-color: #1e1e1e;
+  background-color: black;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 }
 
 .solution-item:hover {
   transform: translateY(-10px);
-  background-color: #e0e0e0;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #6b00b6, #00d4ff);
+  box-shadow: 0 0 20px rgba(107, 0, 182, 0.8), 0 0 30px rgba(0, 212, 255, 0.8);
+  border: 2px solid rgba(107, 0, 182, 0.8);
 }
 
 .dark .solution-item:hover {
-  background-color: #333333;
-  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #6b00b6, #00d4ff);
+  box-shadow: 0 0 20px rgba(107, 0, 182, 0.8), 0 0 30px rgba(0, 212, 255, 0.8);
+  border: 2px solid rgba(107, 0, 182, 0.8);
 }
 
 .solution-item a {

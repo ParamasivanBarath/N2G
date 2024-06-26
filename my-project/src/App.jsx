@@ -83,7 +83,7 @@ const App = () => {
             element={<Footer />}
           />
         </Routes>
-        <div className="space-y-20 py-10"> {/* Increase spacing and add padding */}
+        <div className="space-y-20 "> {/* Increase spacing and add padding */}
           <div className="container mx-auto">
             <Features />
           </div>
