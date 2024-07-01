@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 import Hero from './Components/Hero/Hero';
 import Banner from './Components/Banner/Banner';
@@ -16,12 +16,44 @@ import Contact from './Components/Contact/Contact';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+const AllComponents = ({ togglePlay }) => (
+  <div className="space-y-20">
+    <div className="w-full p-0 m-0">
+      <Hero />
+    </div>
+    <div className="w-full p-0 m-0">
+      <Features />
+    </div>
+    <div className="w-full p-0 m-0">
+      <Solutions togglePlay={togglePlay}/>
+    </div>
+    <div className="w-full p-0 m-0">
+      <Quotes />
+    </div>
+    <div className="w-full p-0 m-0">
+      <Banner2 togglePlay={togglePlay} />
+    </div>
+    <div className="w-full p-0 m-0">
+      <Banner togglePlay={togglePlay} />
+    </div>
+    <div className="w-full p-0 m-0">
+      <Banner2 togglePlay={togglePlay} />
+    </div>
+    <div className="w-full p-0 m-0">
+      <Brands />
+    </div>
+    <div className="w-full p-0 m-0">
+      <Appstore />
+    </div>
+    <div className="w-full p-0 m-0">
+      <Footer />
+    </div>
+  </div>
+);
+
 const App = () => {
   const [isPlay, setIsPlay] = useState(false);
-
-  const togglePlay = () => {
-    setIsPlay(!isPlay);
-  };
+  const togglePlay = () => setIsPlay(!isPlay);
 
   useEffect(() => {
     AOS.init({
@@ -33,88 +65,26 @@ const App = () => {
     AOS.refresh();
   }, []);
 
+  const location = useLocation();
+
   return (
-    <Router>
-      <main className="overflow-x-hidden bg-white dark:bg-black px-0 mx-0">
-        <Navbar />
-        <Routes>
-          <Route
-            path="/"
-            element={<Hero togglePlay={togglePlay} />}
-          />
-          <Route
-            path="/Home"
-            element={<Hero togglePlay={togglePlay} />}
-          />
-          <Route
-            path="/About"
-            element={<Banner />}
-          />
-          <Route
-            path="/Contact"
-            element={<Contact />}
-          />
-          <Route
-            path="/Features"
-            element={<Features />}
-          />
-          <Route
-            path="/Solutions"
-            element={<Solutions togglePlay={togglePlay} />}
-          />
-          <Route
-            path="/Quotes"
-            element={<Quotes />}
-          />
-          <Route
-            path="/Banner2"
-            element={<Banner2 />}
-          />
-          <Route
-            path="/Brands"
-            element={<Brands />}
-          />
-          <Route
-            path="/Appstore"
-            element={<Appstore />}
-          />
-          <Route
-            path="/Footer"
-            element={<Footer />}
-          />
-        </Routes>
-        <div className="space-y-20"> {/* Increase spacing and add padding */}
-          <div className="w-full p-0 m-0">
-            <Features />
-          </div>
-          <div className="w-full p-0 m-0">
-            <Solutions togglePlay={togglePlay}/>
-          </div>
-          <div className="w-full p-0 m-0">
-            <Quotes />
-          </div>
-          <div className="w-full p-0 m-0">
-            <Banner2 togglePlay={togglePlay} />
-          </div>
-          <div className="w-full p-0 m-0">
-            <Banner togglePlay={togglePlay} />
-          </div>
-          <div className="w-full p-0 m-0">
-            <Banner2 togglePlay={togglePlay} />
-          </div>
-          <div className="w-full p-0 m-0">
-            <Brands />
-          </div>
-          <div className="w-full p-0 m-0">
-            <Appstore />
-          </div>
-          <div className="w-full p-0 m-0">
-            <Footer />
-          </div>
-        </div>
-        <PopupPlayer isPlay={isPlay} togglePlay={togglePlay} />
-      </main>
-    </Router>
+    <main className="overflow-x-hidden bg-white dark:bg-black px-0 mx-0">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<AllComponents togglePlay={togglePlay} />} />
+        <Route path="/home" element={<Hero togglePlay={togglePlay} />} />
+        <Route path="/about" element={<Banner />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/features" element={<Features />} />
+        <Route path="/solutions" element={<Solutions togglePlay={togglePlay} />} />
+        <Route path="/quotes" element={<Quotes />} />
+        <Route path="/banner2" element={<Banner2 />} />
+        <Route path="/brands" element={<Brands />} />
+        <Route path="/appstore" element={<Appstore />} />
+        <Route path="/footer" element={<Footer />} />
+      </Routes>
+      {location.pathname === '/' && <PopupPlayer isPlay={isPlay} togglePlay={togglePlay} />}
+    </main>
   );
 };
 
