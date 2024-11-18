@@ -5,7 +5,7 @@ import './Hero.css'; // Ensure this path is correct based on your project struct
 
 const Hero = () => {
   const handleSeeDemo = () => {
-    window.location.href = "https://youtube.com/@chandralekha-communikonnect?si=_NDDQnMFsf_fLhrN";
+    window.location.href = "https://youtube.com/shorts/s8nZ7ZhymRU?si=uWWMme_h9lh_MpIg";
   };
 
   return (

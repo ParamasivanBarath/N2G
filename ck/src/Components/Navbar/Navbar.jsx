@@ -15,7 +15,7 @@ const Navbar = () => {
 
   // Define navigation items with their scroll targets
   const navItems = [
-    { name: "Home", target: "home" },
+    { name: "Home", target: "/" },
     { name: "Service", target: "services-section" },
     { name: "FAQ", target: "faq-section" },
     { name: "About", target: "about-us" }
