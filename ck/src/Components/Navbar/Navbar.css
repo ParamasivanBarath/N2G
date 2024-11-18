@@ -1,0 +1,114 @@
+/* General navbar styles */
+/* In your global CSS or Navbar.css */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    scroll-padding-top: 70px; /* Adjust this value to match your navbar height */
+  }
+  .navbar {
+    background-color: #301934; /* Adjust to your preferred color */
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-logo a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-menu li a {
+    color: #fbbf24;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    padding-right: 20px; /* Add padding to the right of the last menu item */
+  }
+  
+  .nav-menu li a:hover {
+    color: white;
+  }
+  
+  /* Burger Menu Icon (hidden on full screen) */
+  .nav-burger {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .burger-line {
+    width: 25px;
+    height: 3px;
+    background: #fbbf24;
+    margin: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Burger icon animation */
+  .burger-line.open:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .burger-line.open:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .burger-line.open:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  /* Mobile menu (hidden by default) */
+  .nav-menu-mobile {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #301934;
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  .nav-menu-mobile.active {
+    display: flex;
+  }
+  
+  .nav-menu-mobile li {
+    margin-bottom: 1rem;
+  }
+  
+  .nav-menu-mobile li a {
+    color: #fbbf24;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  
+  /* Responsive styles */
+  @media (min-width: 640px) {
+    .nav-burger {
+      display: none;
+    }
+  
+    .nav-menu {
+      display: flex;
+    }
+  
+    .nav-menu-mobile {
+      display: none;
+    }
+  }
