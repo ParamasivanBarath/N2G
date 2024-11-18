@@ -9,9 +9,9 @@ const NavLinks = [
   { id: 2, name: "About", link: "/about" },
   { id: 3, name: "Solutions", link: "/solutions" },
   { id: 4, name: "Blogs", link: "https://06g.06e.myftpupload.com/blog/" },
-  { id: 5, name: "Contact", link: "/contact" },
   { id: 6, name: "News", link: "/News" },
   { id: 7, name: "Career", link: "/Career" },
+  { id: 5, name: "Contact", link: "/contact" },
 ];
 
 const Navbar = () => {

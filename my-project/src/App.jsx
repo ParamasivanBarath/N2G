@@ -22,6 +22,9 @@ const AllComponents = ({ togglePlay }) => (
       <Hero />
     </div>
     <div className="w-full p-0 m-0">
+      <Banner togglePlay={togglePlay} />
+    </div>
+    <div className="w-full p-0 m-0">
       <Features />
     </div>
     <div className="w-full p-0 m-0">
@@ -29,15 +32,6 @@ const AllComponents = ({ togglePlay }) => (
     </div>
     <div className="w-full p-0 m-0">
       <Quotes />
-    </div>
-    <div className="w-full p-0 m-0">
-      <Banner2 togglePlay={togglePlay} />
-    </div>
-    <div className="w-full p-0 m-0">
-      <Banner togglePlay={togglePlay} />
-    </div>
-    <div className="w-full p-0 m-0">
-      <Banner2 togglePlay={togglePlay} />
     </div>
     <div className="w-full p-0 m-0">
       <Brands />
@@ -72,15 +66,15 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<AllComponents togglePlay={togglePlay} />} />
-        <Route path="/home" element={<Hero togglePlay={togglePlay} />} />
-        <Route path="/about" element={<Banner />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/features" element={<Features />} />
-        <Route path="/solutions" element={<Solutions togglePlay={togglePlay} />} />
-        <Route path="/quotes" element={<Quotes />} />
-        <Route path="/banner2" element={<Banner2 />} />
-        <Route path="/brands" element={<Brands />} />
-        <Route path="/appstore" element={<Appstore />} />
+        <Route path="/home" element={<><Hero togglePlay={togglePlay} /><Footer /></>} />
+        <Route path="/about" element={<><Banner /><Footer /></>} />
+        <Route path="/contact" element={<><Contact /><Footer /></>} />
+        <Route path="/features" element={<><Features /><Footer /></>} />
+        <Route path="/solutions" element={<><Solutions togglePlay={togglePlay} /><Footer /></>} />
+        <Route path="/quotes" element={<><Quotes /><Footer /></>} />
+        <Route path="/banner2" element={<><Banner2 /><Footer /></>} />
+        <Route path="/brands" element={<><Brands /><Footer /></>} />
+        <Route path="/appstore" element={<><Appstore /><Footer /></>} />
         <Route path="/footer" element={<Footer />} />
       </Routes>
       {location.pathname === '/' && <PopupPlayer isPlay={isPlay} togglePlay={togglePlay} />}
